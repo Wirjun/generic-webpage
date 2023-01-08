@@ -1,0 +1,104 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core"
+                template="template.xhtml">
+    <ui:define name="title">Menü</ui:define>
+    <ui:define name="content">
+        <h:body>
+            <h1>Menü</h1>
+            <h:form id="menuForm">
+                <p:card>
+                    <p:commandButton icon="fas fa-plus" value="Neuer Menüeintrag" style="margin-bottom: 10px"
+                                     update="menuDlgForm"
+                                     actionListener="#{menuBean.initCreateDialog()}"
+                                     oncomplete="PF('createOrUpdateDlg').show()">
+                        <p:ajax update="menuDlgForm" resetValues="true"/>
+                    </p:commandButton>
+                    <p:dataTable var="menu" value="#{menuBean.menus}">
+                        <p:column exportable="false" filterable="false" sortable="false" styleClass="coloredTableColumn #{menu.visible ? '' : 'red-bg'}"/>
+                        <p:column headerText="#" width="10">
+                            <h:outputText value="#{menu.id}"/>
+                        </p:column>
+                        <p:column headerText="Name" width="100">
+                            <h:outputText value="#{menu.label}"/>
+                        </p:column>
+                        <p:column headerText="Reihenfolge">
+                            <h:outputText value="#{menu.sort}"/>
+                        </p:column>
+                        <p:column width="25">
+                            <p:commandButton icon="fas fa-pencil" title="Bearbeiten" styleClass="rounded-button"
+                                             update="menuDlgForm"
+                                             actionListener="#{menuBean.initUpdateDialog(menu)}"
+                                             oncomplete="PF('createOrUpdateDlg').show()">
+                                <f:setPropertyActionListener value="#{menu}" target="#{menuBean.selectedMenu}"/>
+                                <p:ajax update="menuDlgForm" resetValues="true"/>
+                            </p:commandButton>
+                        </p:column>
+                        <p:column width="25">
+                            <p:commandButton icon="fas fa-trash" title="Löschen" actionListener="#{menuBean.delete(menu)}" update="menuForm"
+                                             styleClass="rounded-button ui-button-danger">
+                                <p:confirm header="Bestätigen" message="Soll der Menüeintrag wirklich gelöscht werden?" icon="fa-solid fa-triangle-exclamation"/>
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                </p:card>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="500">
+                    <p:commandButton value="Nein" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                    <p:commandButton value="Ja" type="button" styleClass="ui-confirmdialog-yes"/>
+                </p:confirmDialog>
+            </h:form>
+
+            <p:dialog header="Menüeintrag bearbeiten" widgetVar="createOrUpdateDlg" position="200,100" minHeight="500" width="70%" showEffect="fade" modal="true" closable="false">
+                <h:form id="menuDlgForm">
+                    <p:messages id="msgs" showIcon="false"/>
+                    <br/>
+                    <div class="grid">
+                        <div class="col-10">
+                            <div class="field">
+                                <span class="ui-float-label">
+                                    <p:inputText value="#{menuBean.selectedMenu.label}" required="true" styleClass="w-full"/>
+                                    <p:outputLabel for="@previous" value="Name"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <h:panelGrid columns="2">
+                                <p:outputLabel for="@next" value="Sichtbar: " style="margin-right: 5px"/>
+                                <p:toggleSwitch value="#{menuBean.selectedMenu.visible}" style="margin-top: 3px"/>
+                            </h:panelGrid>
+                        </div>
+                        <div class="col-2">
+                            <div class="field">
+                                <span class="ui-float-label">
+                                    <p:inputNumber value="#{menuBean.selectedMenu.sort}" inputStyleClass="w-full"/>
+                                    <p:outputLabel for="@previous" value="Reihenfolge"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="field">
+                                <span class="ui-float-label">
+                                    <p:inputText value="#{menuBean.selectedMenu.icon}" styleClass="w-full"/>
+                                    <p:outputLabel for="@previous" value="Symbol"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="field">
+                                <label>
+                                    <p:link href="https://fontawesome.com/search?o=r&amp;m=free" target="_blank" style="padding-top: 8px; display: flex">Entdecke Symbole</p:link>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: right">
+                        <p:commandButton value="Abbrechen" styleClass="ui-button-flat" onclick="PF('createOrUpdateDlg').hide()"/>
+                        <p:commandButton value="Speichern" actionListener="#{menuBean.saveOrUpdate()}" update="menuForm, menuDlgForm"
+                                         oncomplete="if (!args.validationFailed) PF('createOrUpdateDlg').hide();"/>
+                    </div>
+                </h:form>
+            </p:dialog>
+        </h:body>
+    </ui:define>
+</ui:composition>

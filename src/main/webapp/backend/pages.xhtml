@@ -1,0 +1,96 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="template.xhtml">
+    <ui:define name="title">Beitrag</ui:define>
+    <ui:define name="content">
+        <h:body>
+            <h1>Beitrag</h1>
+            <h:form id="pageForm">
+                <p:card>
+                    <p:commandButton icon="fas fa-plus" value="Neuer Beitrag" style="margin-bottom: 10px"
+                                     update="pageDlgForm"
+                                     actionListener="#{pageBean.initCreateDialog()}"
+                                     oncomplete="PF('createOrUpdateDlg').show()">
+                        <p:ajax update="pageDlgForm" resetValues="true"/>
+                    </p:commandButton>
+                    <p:dataTable var="page" value="#{pageBean.pages}">
+                        <p:column exportable="false" filterable="false" sortable="false" styleClass="coloredTableColumn #{page.visible ? '' : 'red-bg'}"/>
+                        <p:column headerText="#" width="10">
+                            <h:outputText value="#{page.id}"/>
+                        </p:column>
+                        <p:column headerText="Titel" width="100">
+                            <h:outputText value="#{page.title}"/>
+                        </p:column>
+                        <p:column headerText="Alias">
+                            <p:link href="/#{page.alias}" target="_blank">
+                                <i class="fa-solid fa-eye" style="margin-right: 5px"/>
+                                <h:outputText value="/#{page.alias}"/>
+                            </p:link>
+                        </p:column>
+                        <p:column width="25">
+                            <p:commandButton icon="fas fa-pencil" title="Bearbeiten" styleClass="rounded-button"
+                                             update="pageDlgForm"
+                                             actionListener="#{pageBean.initUpdateDialog(page)}"
+                                             oncomplete="PF('createOrUpdateDlg').show()">
+                                <p:ajax update="pageDlgForm" resetValues="true"/>
+                            </p:commandButton>
+                        </p:column>
+                        <p:column width="25">
+                            <p:commandButton icon="fas fa-trash" title="Löschen" actionListener="#{pageBean.delete(page)}" update="pageForm"
+                                             styleClass="rounded-button ui-button-danger">
+                                <p:confirm header="Bestätigen" message="Soll der Beitrag wirklich gelöscht werden?" icon="fa-solid fa-triangle-exclamation"/>
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                </p:card>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="500">
+                    <p:commandButton value="Nein" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                    <p:commandButton value="Ja" type="button" styleClass="ui-confirmdialog-yes"/>
+                </p:confirmDialog>
+            </h:form>
+
+            <p:dialog header="Beitrag bearbeiten" widgetVar="createOrUpdateDlg" position="200,100" minHeight="500" width="70%" showEffect="fade" modal="true" closable="false">
+                <h:form id="pageDlgForm">
+                    <p:messages id="msgs" showIcon="false"/>
+                    <br/>
+                    <div class="grid">
+                        <div class="col-7">
+                            <div class="field">
+                                <span class="ui-float-label">
+                                    <p:inputText value="#{pageBean.selectedPage.title}" required="true" styleClass="w-full"/>
+                                    <p:outputLabel for="@previous" value="Titel"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="field">
+                                <span class="ui-float-label">
+                                    <p:inputText value="#{pageBean.selectedPage.alias}" required="true" styleClass="w-full"/>
+                                    <p:outputLabel for="@previous" value="Alias"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <h:panelGrid columns="2">
+                                <p:outputLabel for="@next" value="Sichtbar: " style="margin-right: 5px"/>
+                                <p:toggleSwitch value="#{pageBean.selectedPage.visible}" style="margin-top: 3px"/>
+                            </h:panelGrid>
+                        </div>
+                        <div class="col-12">
+                            <p:textEditor value="#{pageBean.selectedPage.content}" required="true" height="300" styleClass="w-full"/>
+                            <p:outputLabel for="@previous" value="Content" style="display: none"/>
+                        </div>
+                    </div>
+
+                    <div style="float: right">
+                        <p:commandButton value="Abbrechen" styleClass="ui-button-flat" onclick="PF('createOrUpdateDlg').hide()"/>
+                        <p:commandButton value="Speichern" actionListener="#{pageBean.saveOrUpdate()}" update="pageForm, pageDlgForm"
+                                         oncomplete="if (!args.validationFailed) PF('createOrUpdateDlg').hide();"/>
+                    </div>
+                </h:form>
+            </p:dialog>
+        </h:body>
+    </ui:define>
+</ui:composition>
