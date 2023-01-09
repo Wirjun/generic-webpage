@@ -1,13 +1,14 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:p="http://primefaces.org/ui"
+                xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core"
                 template="template.xhtml">
     <ui:define name="title">Beitrag</ui:define>
     <ui:define name="content">
         <h:body>
             <h1>Beitrag</h1>
             <h:form id="pageForm">
+                <p:growl id="growl" showDetail="true"/>
                 <p:card>
                     <p:commandButton icon="fas fa-plus" value="Neuer Beitrag" style="margin-bottom: 10px"
                                      update="pageDlgForm"
@@ -29,6 +30,9 @@
                                 <h:outputText value="/#{page.alias}"/>
                             </p:link>
                         </p:column>
+                        <p:column headerText="Menü">
+                            <h:outputText value="#{page.menu eq null ? '-' : page.menu.label}"/>
+                        </p:column>
                         <p:column width="25">
                             <p:commandButton icon="fas fa-pencil" title="Bearbeiten" styleClass="rounded-button"
                                              update="pageDlgForm"
@@ -38,7 +42,7 @@
                             </p:commandButton>
                         </p:column>
                         <p:column width="25">
-                            <p:commandButton icon="fas fa-trash" title="Löschen" actionListener="#{pageBean.delete(page)}" update="pageForm"
+                            <p:commandButton icon="fas fa-trash" title="Löschen" disabled="#{not page.deletable}" actionListener="#{pageBean.delete(page)}" update="pageForm"
                                              styleClass="rounded-button ui-button-danger">
                                 <p:confirm header="Bestätigen" message="Soll der Beitrag wirklich gelöscht werden?" icon="fa-solid fa-triangle-exclamation"/>
                             </p:commandButton>
@@ -51,31 +55,40 @@
                 </p:confirmDialog>
             </h:form>
 
-            <p:dialog header="Beitrag bearbeiten" widgetVar="createOrUpdateDlg" position="200,100" minHeight="500" width="70%" showEffect="fade" modal="true" closable="false">
+            <p:dialog header="Beitrag bearbeiten" widgetVar="createOrUpdateDlg" position="200,100" minHeight="500" width="70%" showEffect="fade" modal="true" closable="false" dynamic="true">
                 <h:form id="pageDlgForm">
                     <p:messages id="msgs" showIcon="false"/>
                     <br/>
                     <div class="grid">
                         <div class="col-7">
                             <div class="field">
-                                <span class="ui-float-label">
+                                <div class="ui-float-label">
                                     <p:inputText value="#{pageBean.selectedPage.title}" required="true" styleClass="w-full"/>
-                                    <p:outputLabel for="@previous" value="Titel"/>
-                                </span>
+                                    <p:outputLabel for="@previous" value="Alias"/>
+                                </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="field">
-                                <span class="ui-float-label">
+                                <div class="ui-float-label">
                                     <p:inputText value="#{pageBean.selectedPage.alias}" required="true" styleClass="w-full"/>
                                     <p:outputLabel for="@previous" value="Alias"/>
-                                </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-2">
                             <h:panelGrid columns="2">
                                 <p:outputLabel for="@next" value="Sichtbar: " style="margin-right: 5px"/>
                                 <p:toggleSwitch value="#{pageBean.selectedPage.visible}" style="margin-top: 3px"/>
+                            </h:panelGrid>
+                        </div>
+                        <div class="col-12">
+                            <h:panelGrid columns="2">
+                                <p:outputLabel for="@next" value="Menü: " style="margin-right: 5px"/>
+                                <p:selectOneMenu value="#{pageBean.selectedPage.menu}" converter="#{genericConverter}">
+                                    <f:selectItem itemLabel="Eintrag wählen ..." itemValue="#{null}" />
+                                    <f:selectItems value="#{pageBean.availableMenus}" var="menu" itemValue="#{menu}" itemLabel="#{menu.label}"/>
+                                </p:selectOneMenu>
                             </h:panelGrid>
                         </div>
                         <div class="col-12">

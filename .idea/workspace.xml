@@ -5,43 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38eafd03-2828-4d76-abed-142372a3ba94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/beans/MenuBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/beans/PageBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/controller/PageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/entities/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/entities/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/repos/MenuRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/repos/PageRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/services/MenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/services/PageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/backend/administration.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/backend/menus.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/backend/pages.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/frontend/header.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/frontend/menu.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/frontend/template.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/generated/page.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dae/example/template/TemplateApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dae/example/template/beans/ExpansionBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dae/example/template/config/JsfConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dae/example/template/entities/Expansion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dae/example/template/repos/ExpansionRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dae/example/template/services/ExpansionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dae/example/template/util/ViewScope.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/footer.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/backend/header.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontend/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/backend/menu.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/toggleNavbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/table.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/backend/template.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dae/example/template/TemplateApplicationTests.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/converter/GenericConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/entities/IConvertible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/util/GrowlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/WebpageApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/WebpageApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/beans/MenuBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/beans/MenuBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/beans/PageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/beans/PageBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/controller/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/entities/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/entities/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/entities/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/entities/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/repos/MenuRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/repos/MenuRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generic/webpage/services/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generic/webpage/services/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/backend/menus.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/backend/menus.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/backend/pages.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/backend/pages.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,16 +29,33 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="com.haulmont.jpb.JpaEntity" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="76541c41-99a3-4eff-b682-32f498fe62b1" />
+        <option name="url" value="https://github.com/Wirjun/generic-webpage.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,11 +67,6 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2JYltFOBtDifIEaN448okN46j1B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -85,6 +77,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -98,7 +92,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
     "spring.configuration.checksum": "4fd92bd51bfa519590e47bdb44a834b9",
     "vue.rearranger.settings.migration": "true"
   },
@@ -110,6 +107,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="IIdentity" />
       <recent name="C:\Users\Christoph\Documents\IdeaProjects\generic-webpage\src\main\webapp\backend" />
       <recent name="C:\Users\Christoph\Documents\IdeaProjects\generic-webpage\src\main\webapp\generated" />
       <recent name="C:\Users\Christoph\Documents\IdeaProjects\generic-webpage\src\main\webapp\resources\backend" />
@@ -190,7 +188,10 @@
       <workItem from="1672763707328" duration="897000" />
       <workItem from="1672768309214" duration="4420000" />
       <workItem from="1673008296310" duration="12770000" />
-      <workItem from="1673196356765" duration="3603000" />
+      <workItem from="1673196356765" duration="5407000" />
+      <workItem from="1673206129684" duration="310000" />
+      <workItem from="1673206453334" duration="4704000" />
+      <workItem from="1673288862489" duration="6357000" />
     </task>
     <servers />
   </component>
@@ -201,6 +202,10 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/generic_webpage$WebpageApplication.ic" NAME="WebpageApplication Coverage Results" MODIFIED="1672743740876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

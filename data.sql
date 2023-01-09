@@ -1,11 +1,11 @@
-INSERT INTO page (content, title, alias, visible, deletable)
+INSERT INTO page (content, title, alias, visible, deletable, menu_fk)
 VALUES ('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-        'Lorem Ipsum', '', true, false);
+        'Lorem Ipsum', '', true, false,1);
 
 
-INSERT INTO page (content, title, alias, visible, deletable)
+INSERT INTO page (content, title, alias, visible, deletable, menu_fk)
 VALUES ('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-        'Lorem Ipsum', 'test', true, true);
+        'Lorem Ipsum', 'test', true, true,2);
 
 INSERT INTO page (content, title, alias, visible, deletable)
 VALUES ('World War II or the Second World War, often abbreviated as WWII or WW2, was a world war that lasted from 1939 to 1945. It involved the vast majority of the world''s countries—including all of the great powers—forming two opposing military alliances: the Allies and the Axis powers. World War II was a total war that directly involved more than 100 million personnel from more than 30 countries.',

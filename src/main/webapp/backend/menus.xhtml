@@ -8,6 +8,7 @@
         <h:body>
             <h1>Menü</h1>
             <h:form id="menuForm">
+                <p:growl id="growl" showDetail="true"/>
                 <p:card>
                     <p:commandButton icon="fas fa-plus" value="Neuer Menüeintrag" style="margin-bottom: 10px"
                                      update="menuDlgForm"
@@ -25,6 +26,9 @@
                         </p:column>
                         <p:column headerText="Reihenfolge">
                             <h:outputText value="#{menu.sort}"/>
+                        </p:column>
+                        <p:column headerText="Beitrag">
+                            <h:outputText value="#{menu.page eq null ? '-' : menu.page.title}"/>
                         </p:column>
                         <p:column width="25">
                             <p:commandButton icon="fas fa-pencil" title="Bearbeiten" styleClass="rounded-button"
@@ -56,10 +60,10 @@
                     <div class="grid">
                         <div class="col-10">
                             <div class="field">
-                                <span class="ui-float-label">
+                                <div class="ui-float-label">
                                     <p:inputText value="#{menuBean.selectedMenu.label}" required="true" styleClass="w-full"/>
                                     <p:outputLabel for="@previous" value="Name"/>
-                                </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-2">
@@ -70,18 +74,18 @@
                         </div>
                         <div class="col-2">
                             <div class="field">
-                                <span class="ui-float-label">
+                                <div class="ui-float-label">
                                     <p:inputNumber value="#{menuBean.selectedMenu.sort}" inputStyleClass="w-full"/>
                                     <p:outputLabel for="@previous" value="Reihenfolge"/>
-                                </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="field">
-                                <span class="ui-float-label">
+                                <div class="ui-float-label">
                                     <p:inputText value="#{menuBean.selectedMenu.icon}" styleClass="w-full"/>
-                                    <p:outputLabel for="@previous" value="Symbol"/>
-                                </span>
+                                    <p:outputLabel for="@previous" value="Symbol (z.B. fa-solid fa-heart)"/>
+                                </div>
                             </div>
                         </div>
                         <div class="col-4">

@@ -1,9 +1,7 @@
 package com.generic.webpage.services;
 
 import com.generic.webpage.entities.Menu;
-import com.generic.webpage.entities.Page;
 import com.generic.webpage.repos.MenuRepo;
-import com.generic.webpage.repos.PageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

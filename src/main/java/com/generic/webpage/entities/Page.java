@@ -1,13 +1,15 @@
 package com.generic.webpage.entities;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "page")
-public class Page {
+@NoArgsConstructor
+public class Page implements IConvertible {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
@@ -39,5 +41,9 @@ public class Page {
     @Column(name = "deletable", columnDefinition = "boolean default false", nullable = false)
     private boolean deletable;
 
-
+    @Getter
+    @Setter
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "menu_fk", referencedColumnName = "id")
+    private Menu menu;
 }
